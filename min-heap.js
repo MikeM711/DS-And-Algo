@@ -47,10 +47,7 @@ class MinHeap {
                 break;
             }
 
-            // TODO: DO A BETTER SWAP
-            let tmp = arr[n];
-            arr[n] = arr[parentN];
-            arr[parentN] = tmp;
+            [arr[n], arr[parentN]] = [arr[parentN], arr[n]];
             n = parentN;
         }
     }
@@ -76,9 +73,7 @@ class MinHeap {
                 break;
             }
 
-            let tmp = arr[n];
-            arr[n] = arr[swap];
-            arr[swap] = tmp;
+            [arr[n], arr[swap]] = [arr[swap], arr[n]];
             n = swap;
         }
     }
