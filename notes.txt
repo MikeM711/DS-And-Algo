@@ -1,0 +1,9 @@
+Testing:
+
+input = {2: "hello"};
+output = {2: "hello"};
+expect(input).toEqual(output);
+
+input = 1;
+output = 1;
+expect(input).toBe(output);
