@@ -195,6 +195,19 @@ test("pollMin() + heapifyDown(): Can appropriately remove top element from MinHe
     expect(input).toEqual(output);
 });
 
+test("pollMin() + heapifyDown(): No length", () => {
+    let myMinHeap = new MinHeap();
+    const input = {
+        min: myMinHeap.pollMin(),
+        heap: myMinHeap.arr,
+    };
+    const output = {
+        min: null,
+        heap: [],
+    };
+    expect(input).toEqual(output);
+});
+
 test("peek(): Can Peek Item in MinHeap #1", () => {
     let myMinHeap = new MinHeap();
     myMinHeap.arr = [3, 5, 4];
