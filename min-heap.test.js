@@ -91,6 +91,15 @@ test("add() + heapifyUp(): Can Add Items to MinHeap #3: large heap", () => {
     const input = myMinHeap.arr;
     // 1st number is the most mininum
     // 2nd or 3rd number contains 2nd DEFINITE most mininum
+    //
+    //                      2
+    //                    /   \
+    //                   5     3   
+    //                 /  \   /  \       
+    //                6    9  7   4     
+    //               /  \     
+    //              8    20
+  
     const output = [2, 5, 3, 6, 9, 7, 4, 8, 20];
     expect(input).toEqual(output);
 });
@@ -124,7 +133,7 @@ test("heapifyDown(): Heapify down is correct implemented #1", () => {
 
     let myMinHeap = new MinHeap();
 
-    // Poll (3): [2, 3, 4, 5] => [5, 3, 4]
+    // Poll (2): [2, 3, 4, 5] => [5, 3, 4]
     // Offender: the "5" in the beginning
     myMinHeap.arr = [5, 3, 4]; // this needs to be heapified downwards (1st element in proper position)
     myMinHeap.heapifyDown(0);
@@ -142,6 +151,24 @@ test("heapifyDown(): Heapify down is correct implemented #1: larger heap", () =>
     // Offender: the "9" in the beginning
     myMinHeap.arr = [9, 3, 7, 4, 6, 8, 10, 11];
     myMinHeap.heapifyDown(0);
+
+    //                      9
+    //                    /   \
+    //                   3     7   
+    //                 /  \   /  \       
+    //                4    6  8   10      
+    //               /      
+    //              11 
+
+    // After heapifying: (swap with SMALLEST numbers)
+
+    //                      3
+    //                    /   \
+    //                   4     7   
+    //                 /  \   /  \       
+    //                9    6  8   10      
+    //               /      
+    //              11 
 
     const input = myMinHeap.arr;
     const output = [3, 4, 7, 9, 6, 8, 10, 11];

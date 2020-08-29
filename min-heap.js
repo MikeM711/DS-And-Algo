@@ -58,11 +58,11 @@ class MinHeap {
         //       1N   2N
 
         // 0 typically comes in First
-        const getRightChild = idx => (idx + 1) * 2;
-        const getLeftChild = child2N => child2N - 1;
+        const getRightChild = idx => idx * 2 + 2; // Before: idx => (idx + 1) * 2
+        const getLeftChild = idx => idx * 2 + 1; // Before: child2N => child2N - 1;
 
         let child2N = getRightChild(n);
-        let child1N = getLeftChild(child2N);
+        let child1N = getLeftChild(n);
 
         let arr = this.arr;
         let len = arr.length;
@@ -71,7 +71,7 @@ class MinHeap {
         while (child1N) {
             let swap = null;
             let child2N = getRightChild(n); // root = 0 right child idx is (0 + 1)*2 = 2
-            let child1N = getLeftChild(child2N); // right child idx - 1 = 1 for root's left child
+            let child1N = getLeftChild(n); // right child idx - 1 = 1 for root's left child
 
             // if left child INDEX is within the array index
             // AND the value of left child is LESS THAN the value of the "unorganized" node
