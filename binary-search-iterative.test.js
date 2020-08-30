@@ -8,6 +8,7 @@ test("binarySearchIterative() : Has been found", () => {
     const input = binarySearchIterative(array, x, []);
     const output = [40, 70, 80]; // 80 has been found
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(true) // true result
 });
 
 test("binarySearchIterative() : Has not been found", () => {
@@ -17,6 +18,7 @@ test("binarySearchIterative() : Has not been found", () => {
     const input = binarySearchIterative(array, x, []);
     const output = [40, 70, 80, 90]; // 85 has not been found
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(false) // true false
 });
 
 test("binarySearchIterative() : Empty array", () => {
@@ -26,6 +28,7 @@ test("binarySearchIterative() : Empty array", () => {
     const input = binarySearchIterative(array, x, []);
     const output = []; // 999 has not been found
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(false) // false result
 });
 
 test("binarySearchIterative() : One item", () => {
@@ -35,6 +38,7 @@ test("binarySearchIterative() : One item", () => {
     const input = binarySearchIterative(array, x, []);
     const output = [1]; // 999 has not been found
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(false) // false result
 });
 
 test("binarySearchIterative() : One item - Found", () => {
@@ -44,6 +48,7 @@ test("binarySearchIterative() : One item - Found", () => {
     const input = binarySearchIterative(array, x, []);
     const output = [1]; // 1 has been found
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(true) // true result
 });
 
 test("binarySearchIterative() : Two items", () => {
@@ -53,6 +58,7 @@ test("binarySearchIterative() : Two items", () => {
     const input = binarySearchIterative(array, x, []);
     const output = [1, 2]; // 999 has not been found
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(false) // false result
 });
 
 test("binarySearchIterative() : Two items - found item #1", () => {
@@ -62,6 +68,7 @@ test("binarySearchIterative() : Two items - found item #1", () => {
     const input = binarySearchIterative(array, x, []);
     const output = [1]; // 1 has been found
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(true) // true result
 });
 
 test("binarySearchIterative() : Two items - found item #2", () => {
@@ -71,4 +78,5 @@ test("binarySearchIterative() : Two items - found item #2", () => {
     const input = binarySearchIterative(array, x, []);
     const output = [1, 2]; // 1 has been found
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(true) // true result
 });

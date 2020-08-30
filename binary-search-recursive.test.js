@@ -8,6 +8,7 @@ test("binarySearchRecursiveShell(): Has been found", () => {
     const input = binarySearchRecursiveShell(array, x);
     const output = [40, 70, 80];
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(true) // true result
 });
 
 test("binarySearchRecursiveShell(): Has not been found", () => {
@@ -17,6 +18,7 @@ test("binarySearchRecursiveShell(): Has not been found", () => {
     const input = binarySearchRecursiveShell(array, x);
     const output = [40, 70, 80, 90]; // 85 has not been found
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(false) // false result
 });
 
 test("binarySearchRecursiveShell(): Empty array", () => {
@@ -26,6 +28,7 @@ test("binarySearchRecursiveShell(): Empty array", () => {
     const input = binarySearchRecursiveShell(array, x);
     const output = []; // 999 has not been found
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(false) // false result
 });
 
 test("binarySearchRecursiveShell(): One item", () => {
@@ -35,6 +38,7 @@ test("binarySearchRecursiveShell(): One item", () => {
     const input = binarySearchRecursiveShell(array, x);
     const output = [1]; // 999 has not been found
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(false) // false result
 });
 
 test("binarySearchRecursiveShell(): One item - Found", () => {
@@ -42,8 +46,9 @@ test("binarySearchRecursiveShell(): One item - Found", () => {
     const x = 1;
 
     const input = binarySearchRecursiveShell(array, x);
-    const output = [1]; // 999 has not been found
+    const output = [1]; // 1 has been found
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(true) // true result
 });
 
 test("binarySearchRecursiveShell(): Two items", () => {
@@ -53,6 +58,7 @@ test("binarySearchRecursiveShell(): Two items", () => {
     const input = binarySearchRecursiveShell(array, x);
     const output = [1, 2]; // 999 has not been found
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(false) // false result
 });
 
 test("binarySearchRecursiveShell(): Two items - found item #1", () => {
@@ -62,6 +68,7 @@ test("binarySearchRecursiveShell(): Two items - found item #1", () => {
     const input = binarySearchRecursiveShell(array, x);
     const output = [1]; // 1 has been found
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(true) // true result
 });
 
 test("binarySearchRecursiveShell(): Two items - found item #2", () => {
@@ -71,6 +78,7 @@ test("binarySearchRecursiveShell(): Two items - found item #2", () => {
     const input = binarySearchRecursiveShell(array, x);
     const output = [1, 2]; // 1 has been found
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(true) // true result
 });
 
 test("binarySearchRecursive(): Has been found", () => {
@@ -83,6 +91,7 @@ test("binarySearchRecursive(): Has been found", () => {
     // 40 is the first because that is how the shell operates
     const output = [40, 70, 80]; // 80 has been found between 70 and 90
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(true) // true result
 });
 
 test("binarySearchRecursive(): Has not been found", () => {
@@ -95,4 +104,5 @@ test("binarySearchRecursive(): Has not been found", () => {
     const input = binarySearchRecursiveShell(array, x, left, right);
     const output = [40, 70, 80, 90]; // 85 has not been found between 70 and 90
     expect(input).toEqual(output);
+    expect(output[output.length - 1] === x ).toEqual(false) // false result
 });
