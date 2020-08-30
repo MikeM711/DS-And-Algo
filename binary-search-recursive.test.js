@@ -6,8 +6,8 @@ test("binarySearchRecursiveShell(): Has been found", () => {
     const x = 80;
 
     const input = binarySearchRecursiveShell(array, x);
-    const output = true; // 80 has been found
-    expect(input).toBe(output);
+    const output = [40, 70, 80];
+    expect(input).toEqual(output);
 });
 
 test("binarySearchRecursiveShell(): Has not been found", () => {
@@ -15,8 +15,8 @@ test("binarySearchRecursiveShell(): Has not been found", () => {
     const x = 85;
 
     const input = binarySearchRecursiveShell(array, x);
-    const output = false; // 85 has not been found
-    expect(input).toBe(output);
+    const output = [40, 70, 80, 90]; // 85 has not been found
+    expect(input).toEqual(output);
 });
 
 test("binarySearchRecursiveShell(): Empty array", () => {
@@ -24,8 +24,8 @@ test("binarySearchRecursiveShell(): Empty array", () => {
     const x = 999;
 
     const input = binarySearchRecursiveShell(array, x);
-    const output = false; // 999 has not been found
-    expect(input).toBe(output);
+    const output = []; // 999 has not been found
+    expect(input).toEqual(output);
 });
 
 test("binarySearchRecursiveShell(): One item", () => {
@@ -33,8 +33,8 @@ test("binarySearchRecursiveShell(): One item", () => {
     const x = 999;
 
     const input = binarySearchRecursiveShell(array, x);
-    const output = false; // 999 has not been found
-    expect(input).toBe(output);
+    const output = [1]; // 999 has not been found
+    expect(input).toEqual(output);
 });
 
 test("binarySearchRecursiveShell(): One item - Found", () => {
@@ -42,8 +42,8 @@ test("binarySearchRecursiveShell(): One item - Found", () => {
     const x = 1;
 
     const input = binarySearchRecursiveShell(array, x);
-    const output = true; // 999 has not been found
-    expect(input).toBe(output);
+    const output = [1]; // 999 has not been found
+    expect(input).toEqual(output);
 });
 
 test("binarySearchRecursiveShell(): Two items", () => {
@@ -51,8 +51,8 @@ test("binarySearchRecursiveShell(): Two items", () => {
     const x = 999;
 
     const input = binarySearchRecursiveShell(array, x);
-    const output = false; // 999 has not been found
-    expect(input).toBe(output);
+    const output = [1, 2]; // 999 has not been found
+    expect(input).toEqual(output);
 });
 
 test("binarySearchRecursiveShell(): Two items - found item #1", () => {
@@ -60,8 +60,8 @@ test("binarySearchRecursiveShell(): Two items - found item #1", () => {
     const x = 1;
 
     const input = binarySearchRecursiveShell(array, x);
-    const output = true; // 1 has been found
-    expect(input).toBe(output);
+    const output = [1]; // 1 has been found
+    expect(input).toEqual(output);
 });
 
 test("binarySearchRecursiveShell(): Two items - found item #2", () => {
@@ -69,8 +69,8 @@ test("binarySearchRecursiveShell(): Two items - found item #2", () => {
     const x = 2;
 
     const input = binarySearchRecursiveShell(array, x);
-    const output = true; // 1 has been found
-    expect(input).toBe(output);
+    const output = [1, 2]; // 1 has been found
+    expect(input).toEqual(output);
 });
 
 test("binarySearchRecursive(): Has been found", () => {
@@ -80,8 +80,9 @@ test("binarySearchRecursive(): Has been found", () => {
     const right = 90;
 
     const input = binarySearchRecursiveShell(array, x, left, right);
-    const output = true; // 80 has been found between 70 and 90
-    expect(input).toBe(output);
+    // 40 is the first because that is how the shell operates
+    const output = [40, 70, 80]; // 80 has been found between 70 and 90
+    expect(input).toEqual(output);
 });
 
 test("binarySearchRecursive(): Has not been found", () => {
@@ -90,7 +91,8 @@ test("binarySearchRecursive(): Has not been found", () => {
     const left = 70;
     const right = 90;
 
+    // 40 is the first because that is how the shell operates
     const input = binarySearchRecursiveShell(array, x, left, right);
-    const output = false; // 85 has not been found between 70 and 90
-    expect(input).toBe(output);
+    const output = [40, 70, 80, 90]; // 85 has not been found between 70 and 90
+    expect(input).toEqual(output);
 });
